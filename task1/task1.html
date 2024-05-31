@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Text and Hide Div</title>
+  </head>
+  <body>
+    <button id="hide-btn">Hide Text</button>
+    <div id="random-text">Random text goes here.</div>
+    <script>
+      const randomTexts = [
+        "Hello, World!",
+        "JavaScript is awesome!",
+        "Have a great day!",
+        "Coding is fun!",
+        "Welcome to the quiz app!",
+      ];
+      document.getElementById("random-text").innerText =
+        randomTexts[Math.floor(Math.random() * randomTexts.length)];
+
+      // Hide <div> element on button click
+      document
+        .getElementById("hide-btn")
+        .addEventListener("click", function () {
+          document.getElementById("random-text").style.display = "none";
+        });
+
+      // Create and append <div id="card"> structure
+      const cardDiv = document.createElement("div");
+      cardDiv.id = "card";
+      cardDiv.innerHTML = `<h2>Gandalf</h2><a href="#">Go to profile</a>`;
+      document.body.appendChild(cardDiv);
+    </script>
+  </body>
+</html>
